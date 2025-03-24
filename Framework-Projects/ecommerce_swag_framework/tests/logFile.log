@@ -1,0 +1,4 @@
+2025-02-19 23:24:01,637 :INFO :test_e2e :Logged in successfully
+2025-02-19 23:24:01,948 :INFO :test_e2e :Moving to checkout
+2025-02-19 23:24:02,432 :INFO :test_e2e :Checking Out
+2025-02-19 23:24:02,536 :INFO :test_e2e :The success message is getting

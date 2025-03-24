@@ -1,0 +1,67 @@
+2025-02-19 23:22:28,597 :INFO :test_e2e :Logged in successfully
+2025-02-19 23:22:28,873 :INFO :test_e2e :Moving to checkout
+2025-02-19 23:22:29,279 :INFO :test_e2e :Checking Out
+2025-02-19 23:25:08,229 :INFO :test_e2e :Logged in successfully
+2025-02-19 23:25:08,530 :INFO :test_e2e :Moving to checkout
+2025-02-19 23:25:08,928 :INFO :test_e2e :Checking Out
+2025-02-19 23:25:09,041 :INFO :test_e2e :The success message is getting
+2025-02-19 23:25:56,947 :INFO :test_e2e :Logged in successfully
+2025-02-19 23:25:57,259 :INFO :test_e2e :Moving to checkout
+2025-02-19 23:25:57,682 :INFO :test_e2e :Checking Out
+2025-02-19 23:25:57,812 :INFO :test_e2e :The success message is getting
+2025-02-20 23:06:44,301 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:06:54,544 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:06:54,828 :INFO :test_e2e :Checking Out
+2025-02-20 23:06:54,923 :INFO :test_e2e :The success message is getting
+2025-02-20 23:12:08,482 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:12:08,655 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:12:47,025 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:12:47,247 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:12:47,270 :INFO :test_e2e :The product selected is  Sauce Labs Backpack
+2025-02-20 23:12:47,552 :INFO :test_e2e :Checking Out
+2025-02-20 23:12:47,618 :INFO :test_e2e :The success message is getting
+2025-02-20 23:19:28,762 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:19:38,958 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:22:02,731 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:22:13,015 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:22:13,038 :INFO :test_e2e :The product selected is  Sauce Labs Backpack
+2025-02-20 23:22:13,378 :INFO :test_e2e :Checking Out
+2025-02-20 23:22:13,474 :INFO :test_e2e :The success message is getting
+2025-02-20 23:23:42,461 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:23:52,739 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:23:52,762 :INFO :test_e2e :The product selected is  Sauce Labs Backpack
+2025-02-20 23:23:53,198 :INFO :test_e2e :Checking Out
+2025-02-20 23:23:53,271 :INFO :test_e2e :The success message is getting
+2025-02-20 23:32:44,432 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:32:44,523 :INFO :test_e2e :Name:Sauce Labs Fleece Jacket
+2025-02-20 23:32:44,528 :INFO :test_e2e :Name:Sauce Labs Backpack
+2025-02-20 23:32:44,532 :INFO :test_e2e :Name:Sauce Labs Bolt T-Shirt
+2025-02-20 23:32:44,537 :INFO :test_e2e :Name:Test.allTheThings() T-Shirt (Red)
+2025-02-20 23:32:44,544 :INFO :test_e2e :Name:Sauce Labs Bike Light
+2025-02-20 23:32:44,551 :INFO :test_e2e :Name:Sauce Labs Onesie
+2025-02-20 23:32:44,659 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:32:44,675 :INFO :test_e2e :The product selected is  Sauce Labs Backpack
+2025-02-20 23:32:44,913 :INFO :test_e2e :Checking Out
+2025-02-20 23:32:44,972 :INFO :test_e2e :The success message is getting
+
+2025-02-20 23:40:55,709 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:40:55,799 :INFO :test_e2e :Name of product in cart:Sauce Labs Backpack
+2025-02-20 23:40:55,904 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:40:55,921 :INFO :test_e2e :Correct product in cart
+2025-02-20 23:40:56,175 :INFO :test_e2e :Checking Out
+2025-02-20 23:40:56,235 :INFO :test_e2e :Got success message
+2025-02-20 23:40:56,235 :INFO :test_e2e :E2E test passed for shopping a product
+2025-02-20 23:50:10,310 :INFO :test_e2e :Logged in successfully
+2025-02-20 23:50:10,436 :INFO :test_e2e :Name of product in cart:Sauce Labs Backpack
+2025-02-20 23:50:10,552 :INFO :test_e2e :Moving to checkout
+2025-02-20 23:50:10,567 :INFO :test_e2e :Correct product in cart
+2025-02-20 23:50:10,825 :INFO :test_e2e :Checking Out
+2025-02-20 23:50:10,889 :INFO :test_e2e :Got success message
+2025-02-20 23:50:10,889 :INFO :test_e2e :E2E test passed for shopping a product
+2025-03-24 16:18:15,601 :INFO :test_e2e :Logged in successfully
+2025-03-24 16:18:15,701 :INFO :test_e2e :Name of product in cart:Sauce Labs Backpack
+2025-03-24 16:18:15,814 :INFO :test_e2e :Moving to checkout
+2025-03-24 16:18:15,839 :INFO :test_e2e :Correct product in cart
+2025-03-24 16:18:16,146 :INFO :test_e2e :Checking Out
+2025-03-24 16:18:16,246 :INFO :test_e2e :Got success message
+2025-03-24 16:18:16,246 :INFO :test_e2e :E2E test passed for shopping a product

@@ -1,0 +1,44 @@
+2025-01-26 18:21:11,005 :INFO :test_formSubmission :The email is is pranav@gmail.com
+2025-01-26 18:21:12,266 :INFO :test_formSubmission :The email is is maitra@gmail.com
+2025-01-26 18:21:12,266 :INFO :test_formSubmission :The email is is maitra@gmail.com
+2025-01-26 18:21:16,291 :INFO :test_e2e :getting all the product card titles
+2025-01-26 18:21:16,381 :INFO :test_e2e :iphone X
+2025-01-26 18:21:16,423 :INFO :test_e2e :Samsung Note 8
+2025-01-26 18:21:16,462 :INFO :test_e2e :Nokia Edge
+2025-01-26 18:21:16,501 :INFO :test_e2e :Blackberry
+2025-01-26 18:21:17,051 :INFO :test_e2e :Entering the country name as ind
+2025-01-26 18:21:22,688 :INFO :test_e2e :Text received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2025-01-27 22:42:14,504 :INFO :test_formSubmission :The email is is pranav@gmail.com
+2025-01-27 22:42:15,084 :INFO :test_formSubmission :The email is is maitra@gmail.com
+2025-01-27 22:42:15,084 :INFO :test_formSubmission :The email is is maitra@gmail.com
+2025-01-27 22:42:18,102 :INFO :test_e2e :getting all the product card titles
+2025-01-27 22:42:18,145 :INFO :test_e2e :iphone X
+2025-01-27 22:42:18,163 :INFO :test_e2e :Samsung Note 8
+2025-01-27 22:42:18,216 :INFO :test_e2e :Nokia Edge
+2025-01-27 22:42:18,233 :INFO :test_e2e :Blackberry
+2025-01-27 22:42:18,466 :INFO :test_e2e :Entering the country name as ind
+2025-01-27 22:42:23,817 :INFO :test_e2e :Text received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2025-01-27 23:07:05,991 :INFO :test_formSubmission :The email is is pranav@gmail.com
+2025-01-27 23:07:06,481 :INFO :test_formSubmission :The email is is maitra@gmail.com
+2025-01-27 23:07:06,481 :INFO :test_formSubmission :The email is is maitra@gmail.com
+2025-01-27 23:07:09,633 :INFO :test_e2e :getting all the product card titles
+2025-01-27 23:07:09,683 :INFO :test_e2e :iphone X
+2025-01-27 23:07:09,696 :INFO :test_e2e :Samsung Note 8
+2025-01-27 23:07:09,711 :INFO :test_e2e :Nokia Edge
+2025-01-27 23:07:09,722 :INFO :test_e2e :Blackberry
+2025-01-27 23:07:09,931 :INFO :test_e2e :Entering the country name as ind
+2025-01-27 23:07:15,313 :INFO :test_e2e :Text received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2025-01-27 23:09:18,206 :INFO :test_formSubmission :The email is is pranav@gmail.com
+2025-01-27 23:09:18,795 :INFO :test_formSubmission :The email is is maitra@gmail.com
+2025-01-27 23:09:18,795 :INFO :test_formSubmission :The email is is maitra@gmail.com
+2025-01-27 23:09:21,524 :INFO :test_e2e :getting all the product card titles
+2025-01-27 23:09:21,574 :INFO :test_e2e :iphone X
+2025-01-27 23:09:21,591 :INFO :test_e2e :Samsung Note 8
+2025-01-27 23:09:21,607 :INFO :test_e2e :Nokia Edge
+2025-01-27 23:09:21,621 :INFO :test_e2e :Blackberry
+2025-01-27 23:09:21,862 :INFO :test_e2e :Entering the country name as ind
+2025-01-27 23:09:27,278 :INFO :test_e2e :Text received from application is ×
+Success! Thank you! Your order will be delivered in next few weeks :-).

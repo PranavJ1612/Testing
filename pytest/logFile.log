@@ -1,0 +1,6 @@
+2024-12-27 09:24:49,015 :INFO :test_logging :Information statement
+2024-12-27 09:24:49,015 :WARNING :test_logging :Something is in warning mode
+2024-12-27 09:24:49,015 :ERROR :test_logging :A major error has happened
+2024-12-27 09:24:49,015 :CRITICAL :test_logging :Critical issue
+2024-12-27 09:50:17,739 :INFO :test_editProfile :Pranav
+2024-12-27 09:50:17,739 :INFO :test_editProfile :Jagdale
