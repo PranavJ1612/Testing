@@ -1,0 +1,829 @@
+{
+	"info": {
+		"_postman_id": "c9d6fe71-e91f-466c-be18-01860a162a8b",
+		"name": "DummyJSON API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28911268"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"accessToken\", \"refreshToken\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"sophiab\",\r\n  \"password\": \"sophiabpass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/auth/login",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJzb3BoaWFiIiwiZW1haWwiOiJzb3BoaWEuYnJvd25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiU29waGlhIiwibGFzdE5hbWUiOiJCcm93biIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9kdW1teWpzb24uY29tL2ljb24vc29waGlhYi8xMjgiLCJpYXQiOjE3NDI4MDQ1MDMsImV4cCI6MTc0MjgwODEwM30.UoHvlUSNpyNxRWfFfF3qCmHu1QGKyXphzP5xEtoB560",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Auth session",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJzb3BoaWFiIiwiZW1haWwiOiJzb3BoaWEuYnJvd25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiU29waGlhIiwibGFzdE5hbWUiOiJCcm93biIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9kdW1teWpzb24uY29tL2ljb24vc29waGlhYi8xMjgiLCJpYXQiOjE3NDI4MDQ1MDMsImV4cCI6MTc0NTM5NjUwM30.hvrjLC9fvSOAaIPLxCA1_fHih9jn5U7qg3dpo1CiUkY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/refresh",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches seatched string phone\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"phone\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/search?q=phone",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "phone"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limit and skip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string not includes title of id=1\", function () {\r",
+									"    pm.expect(pm.response.text()).not.include(\"Essence Mascara Lash Princess\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products?limit=6&skip=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "6",
+									"description": "This gives only n number of entries"
+								},
+								{
+									"key": "skip",
+									"value": "2",
+									"description": "This skips first n number of entries"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select specific field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is greater than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products?select=title,price&limit=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "select",
+									"value": "title,price",
+									"description": "This gives only title and price in body as response"
+								},
+								{
+									"key": "limit",
+									"value": "3",
+									"description": "This bonds it to return only first 3 entries"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort and order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products?sortBy=title&order=asc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "title"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all product categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is greater than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/category-list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"category-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string smartphones\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"smartphones\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/category/smartphones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"smartphones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Product is added\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"title\", \"BMW motorsport top\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 0,\r\n    \"title\": \"BMW motorsport top\",\r\n    \"description\": \"The BMW motorsport top is a charming and stylish dress for various occasions. With a vibrant blue color and a comfortable design, it adds a touch of elegance to your wardrobe.\",\r\n    \"category\": \"tops\",\r\n    \"price\": 29.99,\r\n    \"discountPercentage\": 9.37,\r\n    \"rating\": 3.57,\r\n    \"stock\": 37,\r\n    \"tags\": [\r\n        \"clothing\",\r\n        \"dresses\"\r\n    ],\r\n    \"sku\": \"YAXY0OOO\",\r\n    \"weight\": 2,\r\n    \"dimensions\": {\r\n        \"width\": 22.85,\r\n        \"height\": 26.97,\r\n        \"depth\": 12.29\r\n    },\r\n    \"warrantyInformation\": \"1 week warranty\",\r\n    \"shippingInformation\": \"Ships in 1 week\",\r\n    \"availabilityStatus\": \"In Stock\",\r\n    \"reviews\": [\r\n        {\r\n            \"rating\": 2,\r\n            \"comment\": \"Very dissatisfied!\",\r\n            \"date\": \"2024-05-23T08:56:21.626Z\",\r\n            \"reviewerName\": \"Carter Rivera\",\r\n            \"reviewerEmail\": \"carter.rivera@x.dummyjson.com\"\r\n        },\r\n        {\r\n            \"rating\": 1,\r\n            \"comment\": \"Very disappointed!\",\r\n            \"date\": \"2024-05-23T08:56:21.626Z\",\r\n            \"reviewerName\": \"Harper Garcia\",\r\n            \"reviewerEmail\": \"harper.garcia@x.dummyjson.com\"\r\n        },\r\n        {\r\n            \"rating\": 1,\r\n            \"comment\": \"Poor quality!\",\r\n            \"date\": \"2024-05-23T08:56:21.626Z\",\r\n            \"reviewerName\": \"Violet Roberts\",\r\n            \"reviewerEmail\": \"violet.roberts@x.dummyjson.com\"\r\n        }\r\n    ],\r\n    \"returnPolicy\": \"7 days return policy\",\r\n    \"minimumOrderQuantity\": 19,\r\n    \"meta\": {\r\n        \"createdAt\": \"2025-03-24T08:56:21.626Z\",\r\n        \"barcode\": \"3867112520929\",\r\n        \"qrCode\": \"https://assets.dummyjson.com/public/qr-code.png\"\r\n    },\r\n    \"images\": [\r\n        \"https://cdn.dummyjson.com/products/images/tops/Blue%20Frock/1.png\",\r\n        \"https://cdn.dummyjson.com/products/images/tops/Blue%20Frock/2.png\",\r\n        \"https://cdn.dummyjson.com/products/images/tops/Blue%20Frock/3.png\",\r\n        \"https://cdn.dummyjson.com/products/images/tops/Blue%20Frock/4.png\"\r\n    ],\r\n    \"thumbnail\": \"https://cdn.dummyjson.com/products/images/tops/Blue%20Frock/thumbnail.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"tops\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"BMW womens sports top\",\r\n    \"category\":\"tops\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a product by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is greater than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Deleted as BMW womens sports top title not found\", function () {\r",
+									"    pm.expect(pm.response.text()).not.include(\"BMW womens sports top\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get users cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is greater than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/6/carts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"6",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									";\r",
+									"pm.test(\"Check posts count is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.total).to.eql(2);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/5/posts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"5",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully created user\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"New user created with username as pranavj\", function(){\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.username).to.eql(\"pranavj\")\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pranav\",\r\n    \"lastName\": \"Jagdale\",\r\n    \"maidenName\": \"\",\r\n    \"age\": 21,\r\n    \"gender\": \"male\",\r\n    \"email\": \"pranav.jagdale@x.dummyjson.com\",\r\n    \"phone\": \"+91 210-652-2785\",\r\n    \"username\": \"pranavj\",\r\n    \"password\": \"pranavjpass\",\r\n    \"birthDate\": \"2002-12-20\",\r\n    \"image\": \"https://dummyjson.com/icon/sophiab/128\",\r\n    \"bloodGroup\": \"O+\",\r\n    \"height\": 177.72,\r\n    \"weight\": 52.6,\r\n    \"eyeColor\": \"Hazel\",\r\n    \"hair\": {\r\n        \"color\": \"White\",\r\n        \"type\": \"Wavy\"\r\n    },\r\n    \"address\": {\r\n        \"address\": \"1642 Ninth Street\",\r\n        \"city\": \"Pune\",\r\n        \"state\": \"Maharashtra\",\r\n        \"stateCode\": \"MH\",\r\n        \"postalCode\": \"32822\",\r\n        \"coordinates\": {\r\n            \"lat\": 45.289366,\r\n            \"lng\": 46.832664\r\n        },\r\n        \"country\": \"India\"\r\n    },\r\n    \"macAddress\": \"12:a3:d3:6f:5c:5b\",\r\n    \"university\": \"Pepperdine University\",\r\n    \"bank\": {\r\n        \"cardExpire\": \"04/25\",\r\n        \"cardNumber\": \"7795895470082859\",\r\n        \"cardType\": \"Korean Express\",\r\n        \"currency\": \"SEK\",\r\n        \"iban\": \"90XYKT83LMM7AARZ8JN958JC\"\r\n    },\r\n    \"company\": {\r\n        \"department\": \"Research and Development\",\r\n        \"name\": \"Schiller - Zieme\",\r\n        \"title\": \"Accountant\",\r\n        \"address\": {\r\n            \"address\": \"1896 Washington Street\",\r\n            \"city\": \"Dallas\",\r\n            \"state\": \"Nevada\",\r\n            \"stateCode\": \"NV\",\r\n            \"postalCode\": \"88511\",\r\n            \"coordinates\": {\r\n                \"lat\": 20.086743,\r\n                \"lng\": -34.577107\r\n            },\r\n            \"country\": \"United States\"\r\n        }\r\n    },\r\n    \"ein\": \"963-113\",\r\n    \"ssn\": \"638-461-822\",\r\n    \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36\",\r\n    \"crypto\": {\r\n        \"coin\": \"Bitcoin\",\r\n        \"wallet\": \"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a\",\r\n        \"network\": \"Ethereum (ERC20)\"\r\n    },\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"User updated successfully\", function () {\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.lastName).to.eql(\"Tester\")\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"Tester\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"User deleted successfully\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(2);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
